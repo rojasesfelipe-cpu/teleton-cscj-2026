@@ -61,3 +61,23 @@
 @keyframes galaMessageIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:850px){.gala-brand{width:100%;height:16vh}.gala-school{height:12vh}.gala-cross{height:11vh}.gala-logo-text strong{font-size:clamp(45px,8vw,80px)}.gala-ribbon span{font-size:clamp(27px,5vw,52px)}.gala-money-frame{width:94vw;min-height:24vh}.gala-money{font-size:clamp(70px,13.5vw,125px)}.gala-gratitude{width:92vw}.gala-heart{display:none}}
 @media(max-height:700px) and (min-width:851px){.gala-brand{height:16vh}.gala-school{height:12vh}.gala-cross{height:11vh}.gala-logo-text strong{font-size:6.5vw}.gala-ribbon span{font-size:4.2vw}.gala-money-frame{min-height:23vh}.gala-money{font-size:11vw}.gala-message{font-size:2.2vw;margin-block:8px}.gala-gratitude{padding-block:8px}}
+
+
+/* Ajuste fino final: cursos equilibrados y gala más profesional */
+.mascot-wrap{padding-bottom:clamp(18px,2.7vh,34px)}
+.teleton-mark{transform:translateY(-1%)}
+
+.gala-heading{color:#fff7ef;letter-spacing:.12em;text-shadow:0 4px 14px #68002299}
+.gala-ribbon{background:linear-gradient(180deg,#b70732 0%,#960126 100%);border-color:#ffd87a;box-shadow:0 0 0 4px #fff0af2b,0 18px 38px #4e001c66}
+.gala-ribbon span{color:#fff9f2;text-shadow:0 2px 10px #6f001e66}
+.gala-ribbon:before,.gala-ribbon:after{color:#ffd76b;text-shadow:0 0 14px #ffe9aa}
+.gala-money-frame{background:linear-gradient(180deg,#fff8ea 0%,#fff2d7 48%,#fbe7ba 100%);border:6px solid #ffd66e;box-shadow:0 0 0 4px #fff5c46e,0 18px 42px #4a00196a,inset 0 1px 0 #ffffff;min-height:clamp(150px,26vh,280px)}
+.gala-money-frame:before{border-top:10px solid #fffdf4;filter:drop-shadow(0 0 8px #fff1b1)}
+.gala-money-frame:after{background:linear-gradient(90deg,transparent,#ffffffa8,transparent);opacity:.65}
+.gala-money{color:#b0092f;background:none;-webkit-text-fill-color:initial;-webkit-background-clip:border-box;background-clip:border-box;filter:drop-shadow(0 2px 0 #fff7dd) drop-shadow(0 5px 0 #d6ac46) drop-shadow(0 0 10px #fff1b2);font-size:clamp(86px,12.2vw,220px)}
+.gala-message{font-family:Montserrat,Arial,sans-serif;font-size:clamp(20px,2.1vw,36px);font-weight:900;letter-spacing:.02em;color:#fff8f1;text-shadow:0 4px 14px #650023;max-width:92%}
+.gala-gratitude{background:linear-gradient(180deg,#fff8df,#ffe9ae);color:#8b0326;border-color:#fff6d0;box-shadow:0 10px 26px #52001d45}
+.gala-heart{font-size:clamp(96px,9vw,165px);color:#ffdbe1;text-shadow:0 0 14px #ff96a9,0 0 38px #ff2d5460;opacity:.72}
+.gala-wave{opacity:.5}
+
+.stage[data-scene="colegio"] .motto{font-size:clamp(12px,1.08vw,18px);color:#fff0d0}

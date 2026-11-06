@@ -30,10 +30,12 @@ function stopGala(){clearInterval(galaMessageTimer);clearInterval(galaCelebratio
 function animateGala(value, animate=true){
  cancelAnimationFrame(galaFrame);
  const el=$('gala-money');
- if(value==null){el.textContent='$—';return;}
- if(!animate||prefersReduced.matches){el.textContent=fmt(value);return;}
+ const finalValue = (value ?? data.totalColegio);
+ if(finalValue==null || Number.isNaN(finalValue)){el.textContent='$—';return;}
+ if(!animate||prefersReduced.matches){el.textContent=fmt(finalValue);return;}
+ el.textContent='$0';
  const start=performance.now(),duration=1550;
- function tick(now){const t=Math.min(1,(now-start)/duration);const eased=1-Math.pow(1-t,4.4);el.textContent=fmt(value*eased);if(t<1)galaFrame=requestAnimationFrame(tick);}
+ function tick(now){const t=Math.min(1,(now-start)/duration);const eased=1-Math.pow(1-t,4.4);el.textContent=fmt(finalValue*eased);if(t<1)galaFrame=requestAnimationFrame(tick);else el.textContent=fmt(finalValue);}
  galaFrame=requestAnimationFrame(tick);
 }
 function startGala(){
@@ -98,7 +100,7 @@ function show(celebrate=true){
   if(!slides.length)return;
   const s=slides[index];const name=$('name'),value=$('amount');
   $('stage').dataset.scene=s.scene;
-  if(s.scene==='colegio'){animateGala(s.monto,true);startGala();}else stopGala();
+  if(s.scene==='colegio'){animateGala(s.monto ?? data.totalColegio,true);startGala();}else stopGala();
   $('category').textContent=s.category;
   name.textContent=s.nombre;
   name.className=s.nombre.length>23?'extra-long':s.nombre.length>12?'long':'';
@@ -136,7 +138,7 @@ async function refresh(){
       const value=$('amount');const s=slides[index];
       value.className='amount'+(s.monto!=null&&digits(s.monto).length>9?' tiny':s.monto!=null&&digits(s.monto).length>7?' compact':'');
       animateNumber(value,s.monto);
-      if(s.scene==='colegio'){animateGala(s.monto,true);fireworks('funcionarios');}
+      if(s.scene==='colegio'){animateGala(s.monto ?? data.totalColegio,true);fireworks('funcionarios');}
     }
   }catch(e){setStatus(false,loaded?'SIN CONEXIÓN · REINTENTANDO':'CONECTANDO…');console.warn('Teletón / Sheets:',e);}
   finally{fetchBusy=false;}
