@@ -1,0 +1,45 @@
+PORTAL TELETÓN 2026 - COLEGIO SAGRADO CORAZÓN DE JESÚS
+===================================================
+
+INSTALACIÓN EN NETLIFY
+1. Ingresa a https://app.netlify.com/ y crea un sitio nuevo.
+2. Sube la carpeta portal-teleton mediante Netlify Drop o conecta el proyecto a un repositorio Git.
+   IMPORTANTE: La función que consulta Google Sheets necesita desplegarse como
+   Netlify Function. Para mayor seguridad, usa un repositorio Git con todos los
+   archivos de esta carpeta y despliega desde ese repositorio; la subida manual
+   mediante ZIP/carpeta puede no publicar la función automáticamente.
+3. No se necesita configurar ninguna clave API.
+4. Abre la URL de Netlify y presiona F para activar la pantalla completa.
+
+CONTROL EN LA PRESENTACIÓN
+- Flecha derecha: siguiente curso.
+- Flecha izquierda: curso anterior.
+- Inicio / Fin: primer curso / total del colegio.
+- F: pantalla completa.
+- R: recargar montos inmediatamente.
+- La vista NO avanza por sí sola: solo cambia cuando opera el teclado.
+- Los montos se consultan cada 15 segundos desde la planilla publicada.
+- Si cambia una cifra, el monto visible se actualiza sin volver al primer curso.
+
+ORIGEN DE DATOS
+- Planilla publicada: https://docs.google.com/spreadsheets/d/e/2PACX-1vQmDE1iUNPeU1WVOd57G7n73f5ZKZ0N8uMLGTo_PM23ZSrxU37cTaXhrG0op27n4Q/pubhtml
+- Funcionarios: L9.
+- Total colegio: L12.
+- Para cursos, el lector reconoce etiquetas tipo «1° A», «4° Medio B»,
+  «7° Básico A» y toma el monto numérico más cercano.
+
+IMPORTANTE: No se pudo examinar la disposición exacta de las columnas y filas
+internas desde el enlace publicado al crear este paquete. Si el lector no
+identifica algún curso, necesitará ajustarse a la posición real de ese curso
+antes de utilizarse en el evento. NO se inventan montos ni se muestra cero
+cuando la celda no se pudo leer.
+
+COMPROBACIÓN
+Al abrir la página ya desplegada, revisa que el estado superior indique
+«Datos actualizados» y que los importes coincidan con la planilla. Si dice
+«Revisar lectura de planilla», hay que ajustar el mapeo del lector.
+
+El archivo para adaptar el formato es netlify/functions/datos.js.
+El intervalo se ajusta en app.js (REFRESH_EVERY_MS).
+
+Créditos de imágenes: elementos proporcionados por el usuario.
