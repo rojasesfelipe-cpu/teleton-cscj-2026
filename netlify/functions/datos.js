@@ -110,7 +110,7 @@ exports.handler = async function () {
 
     // TOTALES GENERALES
     const funcionarios = monto(filas[8]?.[11]); 
-    const totalColegio = monto(filas[11]?.[11]);
+    const totalColegio = monto(filas[14]?.[11]);
 
     const datos = {
       cursos,
