@@ -151,4 +151,30 @@ document.addEventListener('keydown',ev=>{
   else if(ev.key.toLowerCase()==='f'){ev.preventDefault();if(document.fullscreenElement)document.exitFullscreen?.();else document.documentElement.requestFullscreen?.();}
   else if(ev.key.toLowerCase()==='r'){ev.preventDefault();refresh();}
 });
+// En teléfonos: deslizar a la izquierda/derecha para cambiar de curso.
+// No se muestra ningún control ni se altera la navegación por teclado.
+let touchStartX = null;
+let touchStartY = null;
+let touchStartAt = 0;
+const touchArea = $('stage');
+touchArea.addEventListener('touchstart', event => {
+  if (event.touches.length !== 1) { touchStartX = null; return; }
+  const t = event.touches[0];
+  touchStartX = t.clientX;
+  touchStartY = t.clientY;
+  touchStartAt = Date.now();
+}, { passive: true });
+touchArea.addEventListener('touchend', event => {
+  if (touchStartX === null || !event.changedTouches.length) return;
+  const touch = event.changedTouches[0];
+  const dx = touch.clientX - touchStartX;
+  const dy = touch.clientY - touchStartY;
+  const elapsed = Date.now() - touchStartAt;
+  touchStartX = null;
+  touchStartY = null;
+  if (elapsed > 1400 || Math.abs(dx) < 55 || Math.abs(dx) < Math.abs(dy) * 1.35) return;
+  move(dx < 0 ? 1 : -1);
+}, { passive: true });
+touchArea.addEventListener('touchcancel', () => {touchStartX = null;touchStartY = null;}, { passive: true });
+
 refresh();setInterval(refresh,REFRESH_MS);
