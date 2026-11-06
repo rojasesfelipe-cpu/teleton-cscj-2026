@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#9b0728">
   <meta name="description" content="Teletón 2026 — Recaudación en vivo del Colegio Sagrado Corazón de Jesús.">
-  <title>Teletón 2026 · CSCJ | Unidos por una gran causa</title>
+  <title>Teletón 2026 · CSCJ</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Montserrat:wght@500;600;700;800;900&family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -22,30 +22,45 @@
     <div id="flash" class="flash" aria-hidden="true"></div>
     <canvas id="fx" aria-hidden="true"></canvas>
 
-    <header class="topbar">
-      <div class="school">
+    <header class="hero-top">
+      <div class="hero-brand">
         <img src="assets/logo-colegio.png" alt="Escudo Colegio Sagrado Corazón de Jesús" class="school-logo">
-        <div class="school-copy"><span>COLEGIO</span><strong>SAGRADO CORAZÓN<br>DE JESÚS</strong></div>
+        <div class="brand-divider"></div>
+        <div class="teleton-title-wrap">
+          <img class="teleton-cross" src="assets/simbolo-teleton.png" alt="Símbolo Teletón">
+          <div class="teleton-wording">
+            <div class="teleton-word">Teletón</div>
+            <div class="teleton-sub">UNIDOS DE CORAZÓN</div>
+          </div>
+        </div>
       </div>
-      <div class="campaign"><span class="campaign-kicker">JUNTOS HACEMOS LA DIFERENCIA</span><span class="campaign-title">TELETÓN <em>2026</em></span></div>
       <div class="live-info"><span class="live-dot" id="live-dot"></span><span id="live-text">CONECTANDO…</span></div>
     </header>
 
     <main class="main-content">
-      <div class="mascot-wrap" aria-hidden="true"><div class="mascot-glow"></div><img class="mascot" src="assets/teletin.png" alt=""></div>
+      <div class="heart heart-left" aria-hidden="true">❤</div>
+      <div class="heart heart-right" aria-hidden="true">❤</div>
       <section class="reveal" id="reveal" aria-live="polite" aria-atomic="true">
+        <div class="victory-ribbon" id="victory-ribbon">¡LO LOGRAMOS JUNTOS!</div>
         <div class="section-label" id="category">RECAUDACIÓN POR CURSO</div>
-        <div class="accent-line" aria-hidden="true"><span></span><i>♥</i><span></span></div>
-        <h1 id="name">¡Vamos por la<br>Teletón!</h1>
+        <div class="accent-line" id="accent-line" aria-hidden="true"><span></span><i>♥</i><span></span></div>
+        <h1 id="name">¡Vamos por la Teletón!</h1>
         <div class="amount-label" id="amount-label">¡ESTE ES SU GRAN APORTE!</div>
-        <div class="amount-zone"><span class="peso-sign">$</span><span id="amount" class="amount">—</span></div>
+        <div class="amount-card" id="amount-card">
+          <div class="amount-shine" aria-hidden="true"></div>
+          <div class="amount-zone"><span class="peso-sign">$</span><span id="amount" class="amount">—</span></div>
+        </div>
         <div class="cheer" id="message">¡CADA APORTE CUENTA!</div>
+        <div class="gratitude-bar" id="gratitude-bar">
+          <span class="gratitude-icon">♡</span>
+          <span id="gratitude-text">Gracias a nuestros 37 cursos, funcionarios y familias por su compromiso y solidaridad.</span>
+        </div>
       </section>
-      <div class="teleton-mark" aria-hidden="true"><div class="teleton-orbit"></div><img src="assets/simbolo-teleton.png" alt=""><span>UNIDOS<br>DE CORAZÓN</span></div>
+      <div class="side-mascot" aria-hidden="true"><img src="assets/teletin.png" alt=""></div>
     </main>
 
     <footer class="bottom-bar">
-      <div class="bottom-right"><span class="motto">#UnidosPorUnaGranCausa</span><span class="slide-progress" id="counter">— / —</span></div>
+      <div class="bottom-right"><span class="motto" id="motto">#UnidosDeCorazón</span><span class="slide-progress" id="counter">— / —</span></div>
     </footer>
   </div>
   <script src="app.js" defer></script>
