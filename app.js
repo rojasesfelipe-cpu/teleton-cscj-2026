@@ -101,7 +101,6 @@ async function refresh(){
     data={cursos:fresh.cursos,funcionarios:fresh.funcionarios,totalColegio:fresh.totalColegio};
     slides=makeSlides();
     if(previous){const match=slides.findIndex(s=>s.id===previous);index=match>=0?match:Math.min(index,slides.length-1);}
-    $('staff').textContent=fmt(data.funcionarios);$('school').textContent=fmt(data.totalColegio);
     setStatus(true,'EN VIVO · '+new Date().toLocaleTimeString('es-CL',{hour:'2-digit',minute:'2-digit'}));
     // Primera carga: gran entrada. En actualizaciones, modificar solo la cifra,
     // sin animación de diapositiva, confeti ni cambio manual involuntario.
