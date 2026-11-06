@@ -154,3 +154,74 @@ body{background:#79001e}
   .gratitude-bar{margin-top:14px;padding:12px 20px}
 }
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* AJUSTE DE ESCENARIO: la presentación ocupa el centro completo.
+   Teletín es decorativo, nunca una columna que desplace el curso. */
+.main-content{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+  min-width:0;
+}
+.reveal{
+  flex:1 1 auto;
+  width:100%;
+  max-width:100%;
+  min-width:0;
+  margin:0 auto;
+  padding:clamp(8px,1vh,16px) 0 clamp(12px,2vh,24px);
+}
+.side-mascot{
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:clamp(115px,19vw,310px);
+  height:clamp(180px,46vh,480px);
+  z-index:2;
+  pointer-events:none;
+  align-items:flex-end;
+}
+.side-mascot img{
+  width:100%;height:100%;max-height:100%;
+  object-fit:contain;object-position:left bottom;
+}
+.stage[data-scene="curso"] .reveal,
+.stage[data-scene="funcionarios"] .reveal{padding-inline:clamp(175px,17vw,290px)}
+.stage[data-scene="colegio"] .reveal{padding-inline:clamp(5px,2vw,40px)}
+.stage[data-scene="colegio"] .victory-ribbon{
+  font-size:clamp(32px,4.25vw,78px);
+  margin-bottom:clamp(10px,1.5vh,18px);
+}
+.stage[data-scene="colegio"] .amount-card{
+  max-width:100%;
+  padding:clamp(12px,1.7vh,23px) clamp(16px,2.5vw,40px);
+}
+.stage[data-scene="colegio"] .amount-zone{max-width:100%}
+.stage[data-scene="colegio"] .amount{font-size:clamp(84px,10.7vw,190px)}
+.stage[data-scene="colegio"] .amount.compact{font-size:clamp(80px,9.4vw,172px)}
+.stage[data-scene="colegio"] .amount.tiny{font-size:clamp(68px,8vw,146px)}
+.stage[data-scene="colegio"] .peso-sign{font-size:clamp(72px,8.8vw,155px)}
+.stage[data-scene="colegio"] .cheer{font-size:clamp(26px,2.6vw,45px);margin-top:clamp(10px,1.6vh,22px)}
+.stage[data-scene="colegio"] .gratitude-bar{margin-top:clamp(10px,1.5vh,20px);font-size:clamp(13px,1.2vw,21px)}
+@media(max-width:1100px){
+ .stage[data-scene="curso"] .reveal,.stage[data-scene="funcionarios"] .reveal{padding-inline:clamp(115px,13vw,190px)}
+}
+@media(max-width:760px){
+ .main-content{display:flex}
+ .stage[data-scene="curso"] .reveal,.stage[data-scene="funcionarios"] .reveal{padding-inline:8px}
+ .side-mascot{display:none}
+ .stage[data-scene="colegio"] .reveal{padding-inline:0}
+ .stage[data-scene="colegio"] .victory-ribbon{font-size:clamp(21px,5.7vw,40px)}
+ .stage[data-scene="colegio"] .amount{font-size:clamp(52px,11vw,90px)}
+ .stage[data-scene="colegio"] .amount.compact{font-size:clamp(46px,9vw,75px)}
+ .stage[data-scene="colegio"] .amount.tiny{font-size:clamp(38px,7.5vw,62px)}
+ .stage[data-scene="colegio"] .peso-sign{font-size:clamp(44px,9vw,72px)}
+}
+@media(max-height:680px) and (min-width:761px){
+ .stage[data-scene="colegio"] .victory-ribbon{font-size:clamp(30px,3.7vw,55px);margin-bottom:6px}
+ .stage[data-scene="colegio"] .amount{font-size:clamp(68px,9vw,140px)}
+ .stage[data-scene="colegio"] .amount.compact{font-size:clamp(62px,7.7vw,126px)}
+ .stage[data-scene="colegio"] .amount.tiny{font-size:clamp(55px,6.7vw,108px)}
+ .stage[data-scene="colegio"] .gratitude-bar{padding:9px 17px;margin-top:8px}
+}
