@@ -1,37 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="theme-color" content="#b30023" />
-<title>Teletón 2026 | Colegio Sagrado Corazón de Jesús</title>
-<link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#9b0728">
+  <meta name="description" content="Teletón 2026 — Recaudación en vivo del Colegio Sagrado Corazón de Jesús.">
+  <title>Teletón 2026 · CSCJ | Unidos por una gran causa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="background-mark one"></div><div class="background-mark two"></div>
-<div id="confetti" aria-hidden="true"></div>
-<div class="screen">
-<header class="header">
-  <div class="brand-school"><img src="assets/logo-colegio.png" alt="Logo del Colegio Sagrado Corazón de Jesús"><div><span class="overline">UNIDOS POR UNA GRAN CAUSA</span><strong>Colegio Sagrado<br>Corazón de Jesús</strong></div></div>
-  <div class="edition">CAMPAÑA SOLIDARIA <b>2026</b><span class="edition-heart">♥</span></div>
-  <div class="connection"><span id="dot" class="dot"></span><span id="status">Conectando con la planilla…</span></div>
-</header>
-<main>
-  <div class="mascot"><div class="mascot-halo"></div><img src="assets/teletin.png" alt="Teletín, mascota de la Teletón"></div>
-  <section class="spotlight" aria-live="polite">
-    <div class="eyebrow" id="category">RECAUDACIÓN POR CURSO</div>
-    <h1 id="name">¡Vamos por la Teletón!</h1>
-    <div class="amount-wrap"><span class="currency">$</span><div id="amount" class="amount">—</div></div>
-    <div class="pill" id="message">¡Juntos hacemos la diferencia!</div>
-  </section>
-  <aside class="symbol"><div class="symbol-halo"></div><img src="assets/simbolo-teleton.png" alt="Símbolo Teletón"><span>TELETÓN<br><b>2026</b></span></aside>
-</main>
-<footer>
- <div class="footer-totals"><div><small>FUNCIONARIOS</small><strong id="staff">—</strong></div><div class="line"></div><div><small>TOTAL COLEGIO</small><strong id="school">—</strong></div></div>
- <div class="operator"><div class="keys"><kbd>←</kbd><kbd>→</kbd></div><span>Cambiar curso</span><span class="separator">•</span><kbd>F</kbd><span>Pantalla completa</span><span class="separator">•</span><kbd>R</kbd><span>Actualizar</span></div>
- <div class="page-number" id="counter">— / —</div>
-</footer>
-</div>
-<script src="app.js" defer></script>
+  <div class="stage" id="stage" data-scene="curso">
+    <div class="stage-light stage-light-left" aria-hidden="true"></div>
+    <div class="stage-light stage-light-right" aria-hidden="true"></div>
+    <div class="stage-stars" aria-hidden="true"></div>
+    <div class="stage-rings" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="spotbeam beam-left" aria-hidden="true"></div>
+    <div class="spotbeam beam-right" aria-hidden="true"></div>
+    <div id="flash" class="flash" aria-hidden="true"></div>
+    <canvas id="fx" aria-hidden="true"></canvas>
+
+    <header class="topbar">
+      <div class="school">
+        <img src="assets/logo-colegio.png" alt="Escudo Colegio Sagrado Corazón de Jesús" class="school-logo">
+        <div class="school-copy"><span>COLEGIO</span><strong>SAGRADO CORAZÓN<br>DE JESÚS</strong></div>
+      </div>
+      <div class="campaign"><span class="campaign-kicker">JUNTOS HACEMOS LA DIFERENCIA</span><span class="campaign-title">TELETÓN <em>2026</em></span></div>
+      <div class="live-info"><span class="live-dot" id="live-dot"></span><span id="live-text">CONECTANDO…</span></div>
+    </header>
+
+    <main class="main-content">
+      <div class="mascot-wrap" aria-hidden="true"><div class="mascot-glow"></div><img class="mascot" src="assets/teletin.png" alt=""></div>
+      <section class="reveal" id="reveal" aria-live="polite" aria-atomic="true">
+        <div class="section-label" id="category">RECAUDACIÓN POR CURSO</div>
+        <div class="accent-line" aria-hidden="true"><span></span><i>♥</i><span></span></div>
+        <h1 id="name">¡Vamos por la<br>Teletón!</h1>
+        <div class="amount-label" id="amount-label">¡ESTE ES SU GRAN APORTE!</div>
+        <div class="amount-zone"><span class="peso-sign">$</span><span id="amount" class="amount">—</span></div>
+        <div class="cheer" id="message">¡CADA APORTE CUENTA!</div>
+      </section>
+      <div class="teleton-mark" aria-hidden="true"><div class="teleton-orbit"></div><img src="assets/simbolo-teleton.png" alt=""><span>UNIDOS<br>DE CORAZÓN</span></div>
+    </main>
+
+    <footer class="bottom-bar">
+      <div class="total-small"><span>APORTE FUNCIONARIOS</span><strong id="staff">—</strong></div>
+      <span class="total-divider"></span>
+      <div class="total-small total-school"><span>RECAUDACIÓN DEL COLEGIO</span><strong id="school">—</strong></div>
+      <div class="bottom-right"><span class="motto">#UnidosPorUnaGranCausa</span><span class="slide-progress" id="counter">— / —</span></div>
+    </footer>
+  </div>
+  <script src="app.js" defer></script>
 </body>
 </html>
