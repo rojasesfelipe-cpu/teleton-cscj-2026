@@ -89,9 +89,7 @@ exports.handler = async function () {
     for (let fila = 2; fila <= 38; fila++) {
       const celdas = filas[fila - 1] || [];
 
-      const nombre = celdas
-        .slice(0, 7)
-        .find(esCurso);
+      const nombre = celdas[8];
 
       const valor = monto(celdas[7]);
 
