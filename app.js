@@ -100,7 +100,7 @@ function show(celebrate=true){
   if(!slides.length)return;
   const s=slides[index];const name=$('name'),value=$('amount');
   $('stage').dataset.scene=s.scene;
-  if(s.scene==='colegio'){animateGala(s.monto ?? data.totalColegio,true);startGala();}else stopGala();
+  if(s.scene==='colegio'){startGala();animateGala(s.monto ?? data.totalColegio,true);}else stopGala();
   $('category').textContent=s.category;
   name.textContent=s.nombre;
   name.className=s.nombre.length>23?'extra-long':s.nombre.length>12?'long':'';
